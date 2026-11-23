@@ -1,0 +1,21 @@
+# CPU-only PyTorch wheels (much smaller; needed for Render)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic-settings>=2.4
+python-dotenv>=1.0
+
+langchain-core>=0.3
+langchain-community>=0.3
+langchain-text-splitters>=0.3
+langchain-groq>=0.2
+langchain-huggingface>=0.1
+sentence-transformers>=3.0
+torch
+
+pinecone>=5.0
+pypdf>=4.0
+docx2txt>=0.8
+requests>=2.32

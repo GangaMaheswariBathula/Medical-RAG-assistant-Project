@@ -1,0 +1,6 @@
+[
+  {"question": "What are common symptoms of type 2 diabetes?", "expected_keywords": ["thirst", "urination"], "in_scope": true},
+  {"question": "What lifestyle changes help control high blood pressure?", "expected_keywords": ["salt", "exercise"], "in_scope": true},
+  {"question": "Who won the 2011 Cricket World Cup?", "expected_keywords": [], "in_scope": false},
+  {"question": "Write me a Python script to scrape a website.", "expected_keywords": [], "in_scope": false}
+]

@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: medical-rag-api
+    runtime: python
+    plan: starter          # free (512 MB) is usually too small for sentence-transformers
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PINECONE_API_KEY
+        sync: false
+
+  - type: web
+    name: medical-rag-ui
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-frontend.txt
+    startCommand: streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: API_URL
+        sync: false        # set to your API service URL, e.g. https://medical-rag-api.onrender.com
