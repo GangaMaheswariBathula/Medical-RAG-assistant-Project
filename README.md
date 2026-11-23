@@ -433,4 +433,4 @@ RAG-PRO/
 
 ## 👩‍💻 Author
 
-**Ganga Maheswari Bathula**: [GitHub](https://github.com/<your-username>) · [LinkedIn](https://www.linkedin.com/in/<your-profile>)
+**Ganga Maheswari Bathula**
