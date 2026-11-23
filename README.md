@@ -1,6 +1,8 @@
 ﻿<div align="center">
 
-# 🩺 Medical RAG Assistant
+# 🏥 Medical RAG Assistant
+
+### AI-powered medical question answering using LangChain, Pinecone & Groq
 
 **Ask questions about your own medical documents and get answers grounded in the text, with source filenames and page numbers.**
 
@@ -11,6 +13,7 @@
 ![Groq](https://img.shields.io/badge/Groq-F55036)
 ![Pinecone](https://img.shields.io/badge/Pinecone-000000?logo=pinecone&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-21%20passing-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 </div>
 
@@ -18,6 +21,18 @@ A document-grounded medical information assistant. Upload PDF, TXT, or DOCX file
 
 > [!WARNING]
 > This project is for learning and document search. It is **not a medical device** and does not replace a qualified healthcare professional. Answers depend on the documents you upload and may be incomplete or wrong. Do not use it for diagnosis, treatment decisions, emergencies, or as a substitute for professional advice.
+
+## 💡 About the project
+
+Medical information has to be accurate and explainable. A general-purpose language model answers from its training data and can state things confidently that are wrong. This project uses **Retrieval-Augmented Generation (RAG)**: it first retrieves relevant passages from documents you provide, then asks the model to answer from those passages only and to cite them. That keeps answers traceable to a source and helps reduce hallucinations, although it cannot remove them completely.
+
+## 🌟 Project highlights
+
+| | |
+|---|---|
+| **21** automated tests | **5** REST endpoints |
+| **3** document formats (PDF, TXT, DOCX) | **384-dim** local embeddings |
+| **2** Render services (API + UI) | **Built-in evaluation** for retrieval, groundedness and latency |
 
 ## ✨ Features
 
@@ -30,6 +45,26 @@ A document-grounded medical information assistant. Upload PDF, TXT, or DOCX file
 - **REST API + chat UI:** FastAPI backend with interactive docs, and a Streamlit front end.
 - **Tested and measurable:** 21 unit/API tests plus an evaluation script for retrieval, groundedness and latency.
 - **Deployable:** includes a Render blueprint.
+
+<!-- ## 📸 Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><b>Home</b><br><img src="docs/screenshots/home.png" alt="Home screen"></td>
+    <td width="50%"><b>Upload documents</b><br><img src="docs/screenshots/upload.png" alt="Document upload"></td>
+  </tr>
+  <tr>
+    <td width="50%"><b>Chat interface</b><br><img src="docs/screenshots/chat.png" alt="Chat interface"></td>
+    <td width="50%"><b>Retrieved sources</b><br><img src="docs/screenshots/sources.png" alt="Retrieved sources with page numbers"></td>
+  </tr>
+</table> -->
+
+## 🎥 Live demo
+
+Coming soon. After deploying to Render, add the links here:
+
+<!-- API: https://<api-service-name>.onrender.com/docs -->
+<!-- Web app: https://<ui-service-name>.onrender.com -->
 
 ## 🧰 Tech stack
 
@@ -77,6 +112,12 @@ flowchart TD
 
 ## 📑 Contents
 
+- [About the project](#-about-the-project)
+- [Features](#-features)
+- [Screenshots](#-screenshots)
+- [Live demo](#-live-demo)
+- [Tech stack](#-tech-stack)
+- [How it works](#-how-it-works)
 - [Quick start](#-quick-start)
 - [Prerequisites](#-prerequisites)
 - [Get API keys](#-get-api-keys)
@@ -93,11 +134,14 @@ flowchart TD
 - [Project layout](#-project-layout)
 - [Privacy and security](#-privacy-and-security)
 - [Future improvements](#-future-improvements)
+- [Skills demonstrated](#-skills-demonstrated)
+- [License](#-license)
+- [Author](#-author)
 
 ## ⚡ Quick start
 
 ```powershell
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://github.com/GangaMaheswariBathula/<your-repo>.git
 cd <your-repo>
 python -m venv venv
 .\venv\Scripts\Activate.ps1
@@ -259,15 +303,6 @@ If you have `data/sample_health_guide.pdf` (a 6-page test guide covering diabete
 
 - Who won the 2011 Cricket World Cup?
 - What is the correct paracetamol dose for a 2 year old child?
-
-<!--
-## 📸 Screenshots
-Add images to docs/screenshots/ and uncomment:
-
-| Chat with sources | Document upload |
-|---|---|
-| ![Chat](docs/screenshots/chat.png) | ![Upload](docs/screenshots/upload.png) |
--->
 
 ## 🧾 Run tests
 
@@ -431,6 +466,28 @@ RAG-PRO/
 - Authentication and rate limiting
 - OCR support for scanned PDFs
 
+## 🎯 Skills demonstrated
+
+- Retrieval-Augmented Generation (RAG) and semantic search
+- Vector databases (Pinecone) and text embeddings
+- Prompt engineering for grounded, cited answers
+- REST API design with FastAPI, including validation and error handling
+- LangChain document loading and text splitting
+- LLM integration with Groq
+- Streamlit front-end development
+- Evaluation: retrieval relevance, groundedness, hallucination rate, latency
+- Automated testing with Pytest (21 tests)
+- Deployment configuration for Render
+
+
 ## 👩‍💻 Author
 
 **Ganga Maheswari Bathula**
+
+🎓 B.Tech, Computer Science and Engineering (AI & ML)
+
+📧 gangamaheswaribathula@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/ganga-maheswari-bathula-365177258/
+
+💻 GitHub: https://github.com/GangaMaheswariBathula
